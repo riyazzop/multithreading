@@ -3,25 +3,27 @@ package ThreadPools;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-class WorkThread implements Runnable{
+class WorkThread implements Runnable {
     private final int taskId;
 
     WorkThread(int taskId) {
         this.taskId = taskId;
     }
-    public void run(){
 
-        System.out.println(Thread.currentThread().getName()+" is processing task "+taskId);
-        try{
+    public void run() {
+
+        System.out.println(Thread.currentThread().getName() + " is processing task " + taskId);
+        try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println(Thread.currentThread().getName()+" is finished task");
+        System.out.println(Thread.currentThread().getName() + " is finished task");
     }
 }
 
-public class First {
+
+class First {
     void main(String[] args) throws InterruptedException {
 
         ExecutorService executorService = Executors.newFixedThreadPool(3);
