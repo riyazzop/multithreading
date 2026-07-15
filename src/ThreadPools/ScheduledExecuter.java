@@ -16,7 +16,6 @@ public class ScheduledExecuter {
             System.out.println("Running every one secs");
         },1,1, TimeUnit.SECONDS);
 
-
         executorService.schedule(() -> {
             String name ="Riyaz";
             System.out.println(name);
